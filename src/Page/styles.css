@@ -1,0 +1,23 @@
+$some1: #aaaa;
+
+.test{
+    color:chartreuse;
+}
+
+.headerWrapper{
+    border: 2px solid red;
+    height: 200px;
+    width: 600px;
+}
+
+.mainWrapper{
+    border: 2px solid yellow;
+    height: 200px;
+    width: 600px;
+}
+
+.footerWrapper{
+    border: 2px solid green;
+    height: 200px;
+    width: 600px;
+}
