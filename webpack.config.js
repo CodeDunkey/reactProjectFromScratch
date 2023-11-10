@@ -25,10 +25,7 @@ module.exports = {
           title: 'Hot Module Replacement',
          }),
          // new webpack.HotModuleReplacementPlugin(),
-         
-  
     ],
-   
    
    output: {
       path: path.join(__dirname, '/dist'),
@@ -70,4 +67,3 @@ module.exports = {
        new ReactRefreshWebpackPlugin(),
    ]
 }
-
