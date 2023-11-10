@@ -1,12 +1,11 @@
-import React from "react";
+import Header from "./PageJSX/header";
+import Main from "./PageJSX/main";
+import Footer from "./PageJSX/footer";
 
-import Header from "./page/header";
-import Main from "./page/main";
-import Footer from "./page/footer";
 
 export default function App (){
     return(
-        <div>
+        <div >
             <Header />
             <Main />
             <Footer />

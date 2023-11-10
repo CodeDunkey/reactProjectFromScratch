@@ -1,0 +1,17 @@
+
+@mixin theme($width: 25px){
+    background-color: cadetblue;
+    border:1px ridge green;
+    height: 25px;
+    width: $width;
+}
+
+.button1{
+    @include theme;
+}
+.button2{
+    @include theme($width: 35px)
+}
+.button3{
+    @include theme($width: 165px)
+}

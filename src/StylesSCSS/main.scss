@@ -1,0 +1,38 @@
+@use "button";
+@use "navbar";
+
+
+$value: 0 0;
+
+$backColor: rgba(5, 179, 179, 0.6);
+
+
+// @function getQuotes($string){
+//     $withQoutes: quote($string: "");
+//     @return $withQoutes;
+// }
+
+@function add-number($first-number, $second-number){
+    @return ($first-number + $second-number)
+}
+
+.main {
+    color: 
+     $backColor;
+    margin:$value;
+    
+    font: {
+    family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    size: 40px;
+    }
+    text: {
+    align: center ;
+    // decoration:quote();
+    }
+}
+
+.mainWrapper{
+    border: 2px solid yellow;
+    height: 300px;
+    width: 600px;
+}
