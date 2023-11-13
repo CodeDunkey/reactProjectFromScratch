@@ -1,2 +1,10 @@
 # dependencies
 /node_modules
+
+#could have apo keys
+/.env
+
+#
+/.log
+
+/.o
