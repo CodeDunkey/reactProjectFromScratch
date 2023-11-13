@@ -3,7 +3,7 @@ import './../StylesSCSS/main.scss'
 export default function Main (){
     return(
         <div className="mainWrapper">
-            <h1 className="main">Main g</h1>
+            <h1 className="main">Main </h1>
             <nav className='navbar'>Navbar
                 <ul>
                    <li>li 1 <button className='button1'></button></li>

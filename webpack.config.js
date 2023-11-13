@@ -1,12 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-// const isDevelopment = process.env.NODE_ENV !== 'production';
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // const webpack = require('webpack');
 
 module.exports = {
-   // mode: isDevelopment ? 'development' : 'production',
+   mode: isDevelopment ? 'development' : 'production',
    entry: {
       app:'./src/index.jsx'
       // hot: 'webpack/hot/dev-server.js',
@@ -15,9 +15,9 @@ module.exports = {
    
    devtool: 'inline-source-map',
     devServer: {
-      static: './dist',
+      // static: './dist',
       hot: true,
-   //   client: false,
+     client: {logging: "error", overlay: true},
    //   hot: false
     },
     plugins: [
@@ -27,11 +27,11 @@ module.exports = {
          // new webpack.HotModuleReplacementPlugin(),
     ],
    
-   output: {
-      path: path.join(__dirname, '/dist'),
-      filename: 'bundle.js',
-      clean: true
-   },
+   // output: {
+   //    path: path.join(__dirname, '/dist'),
+   //    filename: 'bundle.js',
+   //    clean: true
+   // },
    
    resolve: {
       extensions: ['', '.js', '.jsx', '.css', 'scss']
@@ -41,18 +41,19 @@ module.exports = {
          {
             test: /\.jsx?$/,
             exclude: /node_modules/,
+            include: path.join(__dirname,'src'),
+            use:
+            "babel-loader"
+            // [   
+            // {   
+            // loader: require.resolve('babel-loader'),
             
-            use:[   
-            {   
-            loader: require.resolve('babel-loader'),
-            
-            options: {
-               // ... other options
-               // DO NOT apply the Babel plugin in production mode!
-               plugins: [require.resolve('react-refresh/babel')],
-             },
-            },  
-            ],   
+            // options: {
+               
+            //    plugins: [require.resolve('react-refresh/babel')],
+            //  },
+            // },  
+            // ],   
          },
          {
             test: /\.s[ac]ss$/,
@@ -61,9 +62,11 @@ module.exports = {
       ]
    },
    plugins:[
-       new HtmlWebpackPlugin({
-            template: path.join(__dirname,'/index.html')
+      isDevelopment && new ReactRefreshWebpackPlugin(),
+      new HtmlWebpackPlugin({
+            filename: "./index.html",
+            template: path.join(__dirname,'/public/index.html')
        }),
-       new ReactRefreshWebpackPlugin(),
-   ]
+      //  new ReactRefreshWebpackPlugin(),
+   ].filter(Boolean),
 }
