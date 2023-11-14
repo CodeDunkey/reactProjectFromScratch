@@ -32,7 +32,7 @@ module.exports = {
    //    filename: 'bundle.js',
    //    clean: true
    // },
-   //
+   
    resolve: {
       extensions: ['', '.js', '.jsx', '.css', 'scss']
   },
