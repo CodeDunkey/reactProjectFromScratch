@@ -3,8 +3,8 @@ import './../StylesSCSS/main.scss'
 export default function Main (){
     return(
         <div className="mainWrapper">
-            <h1 className="main">Main abcd 18724624</h1>
-            <nav className='navbar'>Navbar wab wuuub and another wuub
+            <h1 className="main">Main abcd 4624</h1>
+            <nav className='navbar'>Navbar 
                 <ul>
                    <li>li 1 <button className='button1'></button></li>
                    <li>li 2 <button className='button2'></button></li>
